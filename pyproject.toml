@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT OR Apache-2.0"
 license-files = ["LICENSE-MIT", "LICENSE-APACHE"]
-authors = [{ name = "Blueglyph contributors" }]
+authors = [{ name = "Vinícius Eduardo Alves Pedrosa", email = "vinicius.eduardo.pedrosa@gmail.com" }]
 keywords = ["ble", "bluetooth", "nrf52840", "sniffer", "debugger", "wireshark"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
