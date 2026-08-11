@@ -1,0 +1,41 @@
+name: Firmware
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  zephyr:
+    name: Zephyr nRF52840 builds
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        board:
+          - nrf52840dk/nrf52840
+          - nrf52840dongle/nrf52840
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Set up Zephyr
+        uses: zephyrproject-rtos/action-zephyr-setup@v1
+        with:
+          app-path: .
+          toolchains: arm-zephyr-eabi
+          sdk-version: 0.16.8
+
+      - name: Build
+        run: west build -p always -s firmware -b ${{ matrix.board }}
