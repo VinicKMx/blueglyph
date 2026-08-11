@@ -14,4 +14,5 @@ The project goal is to turn radio packets, advertisements, connections, ATT/GATT
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your
+option.
