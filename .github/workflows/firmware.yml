@@ -30,7 +30,7 @@ jobs:
           python-version: "3.12"
 
       - name: Set up Zephyr
-        uses: zephyrproject-rtos/action-zephyr-setup@v1
+        uses: zephyrproject-rtos/action-zephyr-setup@66a907961072acaa85313d2e064e9f071141265a # v1.0.15
         with:
           app-path: app
           toolchains: arm-zephyr-eabi
