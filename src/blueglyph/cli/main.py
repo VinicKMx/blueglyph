@@ -5,9 +5,9 @@ from __future__ import annotations
 import typer
 from rich.console import Console
 
-from bledev import __version__
-from bledev.api import new_capture_session
-from bledev.protocol.usb import HEADER_SIZE, PROTOCOL_MAGIC, PROTOCOL_VERSION
+from blueglyph import __version__
+from blueglyph.api import new_capture_session
+from blueglyph.protocol.usb import HEADER_SIZE, PROTOCOL_MAGIC, PROTOCOL_VERSION
 
 app = typer.Typer(
     add_completion=False,
@@ -21,7 +21,7 @@ def main(
     ctx: typer.Context,
     version: bool = typer.Option(False, "--version", help="Show the host package version."),
 ) -> None:
-    """Run bledev."""
+    """Run blueglyph."""
 
     if version:
         console.print(__version__)

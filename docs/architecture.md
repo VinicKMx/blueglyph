@@ -1,6 +1,6 @@
 # Architecture
 
-`bledev` is a BLE debugger built around one rule:
+`blueglyph` is a BLE debugger built around one rule:
 
 > The hardware captures; the host interprets.
 

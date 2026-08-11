@@ -5,13 +5,13 @@
 
 #include <zephyr/logging/log.h>
 
-LOG_MODULE_REGISTER(bledev_radio, LOG_LEVEL_INF);
+LOG_MODULE_REGISTER(blueglyph_radio, LOG_LEVEL_INF);
 
 static bool radio_initialized;
 static bool radio_capturing;
 static uint8_t selected_channel = 37;
 
-int bledev_radio_init(void)
+int blueglyph_radio_init(void)
 {
 	radio_initialized = true;
 	radio_capturing = false;
@@ -19,7 +19,7 @@ int bledev_radio_init(void)
 	return 0;
 }
 
-int bledev_radio_set_channel(uint8_t channel)
+int blueglyph_radio_set_channel(uint8_t channel)
 {
 	if (!radio_initialized) {
 		return -EAGAIN;
@@ -33,7 +33,7 @@ int bledev_radio_set_channel(uint8_t channel)
 	return 0;
 }
 
-int bledev_radio_start_passive_scan(void)
+int blueglyph_radio_start_passive_scan(void)
 {
 	if (!radio_initialized) {
 		return -EAGAIN;
@@ -44,7 +44,7 @@ int bledev_radio_start_passive_scan(void)
 	return 0;
 }
 
-int bledev_radio_stop(void)
+int blueglyph_radio_stop(void)
 {
 	radio_capturing = false;
 	LOG_INF("radio capture stopped");

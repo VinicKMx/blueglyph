@@ -4,18 +4,18 @@
 
 #include <zephyr/sys/byteorder.h>
 
-int bledev_protocol_encode_header(uint8_t *dst, size_t dst_len,
-				  const struct bledev_message_header *header)
+int blueglyph_protocol_encode_header(uint8_t *dst, size_t dst_len,
+				  const struct blueglyph_message_header *header)
 {
 	if (dst == NULL || header == NULL) {
 		return -EINVAL;
 	}
-	if (dst_len < BLEDEV_PROTOCOL_HEADER_SIZE) {
+	if (dst_len < BLUEGLYPH_PROTOCOL_HEADER_SIZE) {
 		return -EMSGSIZE;
 	}
 
-	sys_put_le16(BLEDEV_PROTOCOL_MAGIC, &dst[0]);
-	dst[2] = BLEDEV_PROTOCOL_VERSION;
+	sys_put_le16(BLUEGLYPH_PROTOCOL_MAGIC, &dst[0]);
+	dst[2] = BLUEGLYPH_PROTOCOL_VERSION;
 	dst[3] = header->message_type;
 	sys_put_le16(header->payload_length, &dst[4]);
 	sys_put_le32(header->sequence, &dst[6]);
@@ -24,7 +24,7 @@ int bledev_protocol_encode_header(uint8_t *dst, size_t dst_len,
 	return 0;
 }
 
-int bledev_protocol_decode_header(struct bledev_message_header *header,
+int blueglyph_protocol_decode_header(struct blueglyph_message_header *header,
 				  const uint8_t *src, size_t src_len)
 {
 	uint16_t magic;
@@ -33,17 +33,17 @@ int bledev_protocol_decode_header(struct bledev_message_header *header,
 	if (header == NULL || src == NULL) {
 		return -EINVAL;
 	}
-	if (src_len < BLEDEV_PROTOCOL_HEADER_SIZE) {
+	if (src_len < BLUEGLYPH_PROTOCOL_HEADER_SIZE) {
 		return -EMSGSIZE;
 	}
 
 	magic = sys_get_le16(&src[0]);
-	if (magic != BLEDEV_PROTOCOL_MAGIC) {
+	if (magic != BLUEGLYPH_PROTOCOL_MAGIC) {
 		return -EINVAL;
 	}
 
 	version = src[2];
-	if (version != BLEDEV_PROTOCOL_VERSION) {
+	if (version != BLUEGLYPH_PROTOCOL_VERSION) {
 		return -ENOTSUP;
 	}
 

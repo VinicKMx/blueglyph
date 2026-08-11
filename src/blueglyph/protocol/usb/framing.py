@@ -7,7 +7,7 @@ import zlib
 from dataclasses import dataclass
 from typing import Self
 
-from bledev.protocol.usb.types import (
+from blueglyph.protocol.usb.types import (
     HEADER_FORMAT,
     HEADER_SIZE,
     MAX_PAYLOAD_LENGTH,

@@ -1,6 +1,6 @@
 # Security Policy
 
-`bledev` is a debugging, observability, protocol analysis, and interoperability testing project.
+`blueglyph` is a debugging, observability, protocol analysis, and interoperability testing project.
 It is not intended for jamming, unauthorized injection, connection hijacking, or bypassing BLE security.
 
 ## Reporting Vulnerabilities

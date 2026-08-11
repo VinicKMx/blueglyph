@@ -3,7 +3,7 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "bledev"
+name = "blueglyph"
 version = "0.1.0"
 description = "BLE debugger and sniffer host tooling for nRF52840 capture hardware."
 readme = "README.md"
@@ -30,12 +30,12 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/blueglyph/bledev/tree/main/docs"
-Issues = "https://github.com/blueglyph/bledev/issues"
-Source = "https://github.com/blueglyph/bledev"
+Documentation = "https://github.com/VinicKMx/blueglyph/tree/main/docs"
+Issues = "https://github.com/VinicKMx/blueglyph/issues"
+Source = "https://github.com/VinicKMx/blueglyph"
 
 [project.scripts]
-bledev = "bledev.cli.main:app"
+blueglyph = "blueglyph.cli.main:app"
 
 [dependency-groups]
 dev = [
@@ -47,10 +47,10 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/bledev"]
+packages = ["src/blueglyph"]
 
 [tool.pytest.ini_options]
-addopts = "--strict-config --strict-markers --cov=bledev --cov-report=term-missing"
+addopts = "--strict-config --strict-markers --cov=blueglyph --cov-report=term-missing"
 testpaths = ["tests"]
 
 [tool.ruff]
@@ -68,5 +68,5 @@ python_version = "3.12"
 strict = true
 warn_unreachable = true
 show_error_codes = true
-packages = ["bledev"]
+packages = ["blueglyph"]
 

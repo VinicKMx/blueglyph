@@ -1,6 +1,6 @@
 """Versioned USB protocol framing."""
 
-from bledev.protocol.usb.framing import (
+from blueglyph.protocol.usb.framing import (
     FrameChecksumError,
     FrameParser,
     FramePayloadTooLargeError,
@@ -9,7 +9,7 @@ from bledev.protocol.usb.framing import (
     USBFrame,
     USBProtocolError,
 )
-from bledev.protocol.usb.types import (
+from blueglyph.protocol.usb.types import (
     HEADER_SIZE,
     MAX_PAYLOAD_LENGTH,
     PROTOCOL_MAGIC,

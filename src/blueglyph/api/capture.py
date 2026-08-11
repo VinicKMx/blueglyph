@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from bledev import __version__
-from bledev.model.capture import CaptureMetadata, CaptureSession
+from blueglyph import __version__
+from blueglyph.model.capture import CaptureMetadata, CaptureSession
 
 
 def new_capture_session(

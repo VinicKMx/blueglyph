@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from bledev.model import BlePhy, CaptureMetadata, CaptureSession, RawRadioPacket
+from blueglyph.model import BlePhy, CaptureMetadata, CaptureSession, RawRadioPacket
 
 
 def test_capture_session_tracks_packets_and_loss() -> None:

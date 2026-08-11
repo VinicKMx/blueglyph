@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 
-from bledev.model.events import RawRadioPacket
+from blueglyph.model.events import RawRadioPacket
 
 
 @dataclass(frozen=True, slots=True)

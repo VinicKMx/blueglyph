@@ -4,7 +4,7 @@ import pytest
 from hypothesis import given
 from hypothesis import strategies as st
 
-from bledev.protocol.usb import (
+from blueglyph.protocol.usb import (
     HEADER_SIZE,
     PROTOCOL_VERSION,
     TRAILER_SIZE,

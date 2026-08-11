@@ -1,12 +1,12 @@
-#ifndef BLEDEV_RADIO_H
-#define BLEDEV_RADIO_H
+#ifndef BLUEGLYPH_RADIO_H
+#define BLUEGLYPH_RADIO_H
 
 #include <stdint.h>
 
-int bledev_radio_init(void);
-int bledev_radio_set_channel(uint8_t channel);
-int bledev_radio_start_passive_scan(void);
-int bledev_radio_stop(void);
+int blueglyph_radio_init(void);
+int blueglyph_radio_set_channel(uint8_t channel);
+int blueglyph_radio_start_passive_scan(void);
+int blueglyph_radio_stop(void);
 
-#endif /* BLEDEV_RADIO_H */
+#endif /* BLUEGLYPH_RADIO_H */
 
