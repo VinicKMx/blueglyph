@@ -1,9 +1,7 @@
 name: Firmware
 
 on:
-  pull_request:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -23,6 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          path: app
           persist-credentials: false
 
       - name: Set up Python
@@ -33,9 +32,9 @@ jobs:
       - name: Set up Zephyr
         uses: zephyrproject-rtos/action-zephyr-setup@v1
         with:
-          app-path: .
+          app-path: app
           toolchains: arm-zephyr-eabi
           sdk-version: 0.16.8
 
       - name: Build
-        run: west build -p always -s firmware -b ${{ matrix.board }}
+        run: west build -p always -s app/firmware -b ${{ matrix.board }}
